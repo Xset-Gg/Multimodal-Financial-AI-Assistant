@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# runtime data (uploaded statements must never be committed)
+backend/var/
+backend/var_*.log
+backend/var_*.err
+*.pid
+docker-build.log
+frontend-dev.log
+
+# node
+frontend/node_modules/
+frontend/.next/
+frontend/next-env.d.ts

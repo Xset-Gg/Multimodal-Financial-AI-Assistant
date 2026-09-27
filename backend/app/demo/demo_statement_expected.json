@@ -1,0 +1,265 @@
+{
+  "currency": "QAR",
+  "period_start": "2025-09-01",
+  "period_end": "2025-09-30",
+  "transaction_count": 36,
+  "total_debits": "10914.52",
+  "total_credits": "5159.00",
+  "previous_balance": "5432.10",
+  "new_balance": "11187.62",
+  "minimum_due": "559.38",
+  "transactions": [
+    {
+      "date": "01/09/2025",
+      "description": "CARREFOUR HYPERMARKET DOHA QA",
+      "amount": "412.75",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "02/09/2025",
+      "description": "STARBUCKS CITY CENTER DOHA QA",
+      "amount": "28.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "02/09/2025",
+      "description": "KARWA TAXI DOHA QA",
+      "amount": "35.50",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "03/09/2025",
+      "description": "OOREDOO POSTPAID BILL DOHA QA",
+      "amount": "250.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "04/09/2025",
+      "description": "AMAZON.COM*MK12 SEATTLE US",
+      "amount": "331.16",
+      "credit": false,
+      "original": "USD 89.99"
+    },
+    {
+      "date": "05/09/2025",
+      "description": "TALABAT FOOD DELIVERY DOHA QA",
+      "amount": "86.25",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "06/09/2025",
+      "description": "NOVO CINEMAS DOHA QA",
+      "amount": "120.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "07/09/2025",
+      "description": "LULU HYPERMARKET AL GHARRAFA QA",
+      "amount": "267.40",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "08/09/2025",
+      "description": "WOQOD FUEL STATION LUSAIL QA",
+      "amount": "140.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "09/09/2025",
+      "description": "APPLE.COM/BILL CORK IE",
+      "amount": "36.76",
+      "credit": false,
+      "original": "USD 9.99"
+    },
+    {
+      "date": "10/09/2025",
+      "description": "PAYMENT RECEIVED - THANK YOU",
+      "amount": "5000.00",
+      "credit": true,
+      "original": null
+    },
+    {
+      "date": "10/09/2025",
+      "description": "SHAKE SHACK MALL OF QATAR QA",
+      "amount": "94.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "11/09/2025",
+      "description": "WELLCARE PHARMACY DOHA QA",
+      "amount": "58.30",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "12/09/2025",
+      "description": "ZARA VILLAGGIO MALL DOHA QA",
+      "amount": "689.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "13/09/2025",
+      "description": "UBER *TRIP LONDON GB",
+      "amount": "112.18",
+      "credit": false,
+      "original": "GBP 23.40"
+    },
+    {
+      "date": "14/09/2025",
+      "description": "BOOKING.COM AMSTERDAM NL",
+      "amount": "1701.00",
+      "credit": false,
+      "original": "EUR 420.00"
+    },
+    {
+      "date": "15/09/2025",
+      "description": "STARBUCKS CITY CENTER DOHA QA",
+      "amount": "31.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "15/09/2025",
+      "description": "NOBU RESTAURANT FOUR SEASONS DOHA QA",
+      "amount": "845.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "15/09/2025",
+      "description": "AL MEERA SUPERMARKET DOHA QA",
+      "amount": "173.90",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "16/09/2025",
+      "description": "VIRGIN MEGASTORE DOHA QA",
+      "amount": "219.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "17/09/2025",
+      "description": "QATAR AIRWAYS DOHA QA",
+      "amount": "2450.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "18/09/2025",
+      "description": "CARREFOUR HYPERMARKET DOHA QA",
+      "amount": "356.20",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "19/09/2025",
+      "description": "NETFLIX.COM LOS GATOS US",
+      "amount": "56.00",
+      "credit": false,
+      "original": "USD 15.49"
+    },
+    {
+      "date": "20/09/2025",
+      "description": "SPOTIFY STOCKHOLM SE",
+      "amount": "21.99",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "21/09/2025",
+      "description": "TALABAT FOOD DELIVERY DOHA QA",
+      "amount": "64.50",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "21/09/2025",
+      "description": "TALABAT FOOD DELIVERY DOHA QA",
+      "amount": "64.50",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "22/09/2025",
+      "description": "IKEA DOHA QA",
+      "amount": "1125.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "23/09/2025",
+      "description": "FITNESS FIRST DOHA QA",
+      "amount": "350.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "24/09/2025",
+      "description": "ZARA VILLAGGIO MALL DOHA QA",
+      "amount": "159.00",
+      "credit": true,
+      "original": null
+    },
+    {
+      "date": "25/09/2025",
+      "description": "COSTA COFFEE LUSAIL QA",
+      "amount": "24.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "26/09/2025",
+      "description": "KAHRAMAA UTILITY PAYMENT DOHA QA",
+      "amount": "310.45",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "27/09/2025",
+      "description": "THE CHEESECAKE FACTORY DOHA QA",
+      "amount": "212.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "28/09/2025",
+      "description": "AMAZON.COM*RT55 SEATTLE US",
+      "amount": "147.08",
+      "credit": false,
+      "original": "USD 39.97"
+    },
+    {
+      "date": "29/09/2025",
+      "description": "KARWA TAXI DOHA QA",
+      "amount": "42.00",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "30/09/2025",
+      "description": "FOREIGN TRANSACTION FEE",
+      "amount": "59.60",
+      "credit": false,
+      "original": null
+    },
+    {
+      "date": "30/09/2025",
+      "description": "INTEREST CHARGE",
+      "amount": "0.00",
+      "credit": false,
+      "original": null
+    }
+  ]
+}

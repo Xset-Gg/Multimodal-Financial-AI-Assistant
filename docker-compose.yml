@@ -1,0 +1,77 @@
+name: spendlens
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-spendlens}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-spendlens}
+      POSTGRES_DB: ${POSTGRES_DB:-spendlens}
+    ports:
+      - "${POSTGRES_PORT:-5446}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/scripts/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-spendlens}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    image: spendlens-backend:latest
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-spendlens}:${POSTGRES_PASSWORD:-spendlens}@db:5432/${POSTGRES_DB:-spendlens}
+      STORAGE_DIR: /data/uploads
+      EMBEDDED_WORKER: "false"
+      CORS_ORIGINS: '["http://localhost:3020"]'
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8020 --proxy-headers"
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8020:8020"
+    volumes:
+      - uploads:/data/uploads
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8020/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  worker:
+    # Same image as the API; runs the analysis worker instead of uvicorn.
+    image: spendlens-backend:latest
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-spendlens}:${POSTGRES_PASSWORD:-spendlens}@db:5432/${POSTGRES_DB:-spendlens}
+      STORAGE_DIR: /data/uploads
+    command: python -m app.jobs.worker
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - uploads:/data/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://backend:8020
+    environment:
+      BACKEND_URL: http://backend:8020
+    ports:
+      - "3020:3020"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  uploads:

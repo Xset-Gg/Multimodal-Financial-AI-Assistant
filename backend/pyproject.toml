@@ -1,0 +1,47 @@
+[project]
+name = "spendlens-backend"
+version = "1.0.0"
+description = "SpendLens AI — multimodal credit-card statement assistant (API + worker)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# On Windows, faulthandler prints a stack dump for *first-chance* native exceptions that
+# docling-parse raises and handles internally. They are not failures; disable the noise.
+addopts = "-p no:faulthandler -p no:cacheprovider"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore:Using `httpx` with `starlette.testclient`",
+]
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+extend-exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "BLE", "SIM"]
+ignore = [
+    "S101",   # assert is fine in tests and for internal invariants
+    "B008",   # FastAPI's Depends() in defaults is idiomatic
+    "S311",
+    "UP042",  # str+Enum keeps plain-string comparisons working with SQLAlchemy
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "B017"]
+"scripts/*" = ["S"]
+# Regex tables read better unwrapped.
+"app/ai/rules.py" = ["E501"]
+"app/processing/dates.py" = ["E501"]
+"app/processing/metadata.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+warn_unused_ignores = false
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+exclude = ["alembic/", "tests/", "scripts/"]
+plugins = ["pydantic.mypy"]
